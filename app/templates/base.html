@@ -1,0 +1,15 @@
+<!--
+    All other templates should extend this base template. This template will include the nessasary
+    CSS and JS files. This template will also include the header and footer.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>
