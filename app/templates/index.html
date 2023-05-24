@@ -1,10 +1,32 @@
 {% extends "base.html" %}
 
-{% block title %}
-Index
+{% block header %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <nav class="main-nav">
+                <!-- ***** Logo Start ***** -->
+                <a href="{{ url_for('index') }}" class="logo">
+                    <h1>Furry Crossroads</h1>
+                </a>
+                <!-- ***** Logo End ***** -->
+            </nav>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block content %}
-<h1>Index Landing Page</h1>
-<p>My template content</p>
+  <div class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          {% include 'login.html' %}
+        </div>
+        <div class="col-lg-4">
+          <img src="{{ url_for('static', filename='images/rover_wip.png')}}" alt="banner-img" class="img-fluid" />
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
