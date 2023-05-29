@@ -34,7 +34,19 @@
 
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
-    {% block header %} {% endblock %}
+    <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <nav class="main-nav navbar navbar-expand-lg navbar-dark bg-dark fixed-top rounded justify-content-center">
+                  <!-- ***** Logo Start ***** -->
+                  <a href="{{ url_for('index') }}" class="logo">
+                      <h1>{% block header %} {% endblock %}</h1>
+                  </a>
+                  <!-- ***** Logo End ***** -->
+              </nav>
+          </div>
+      </div>
+    </div>
   </header>
   <!-- ***** Header Area End ***** -->
 

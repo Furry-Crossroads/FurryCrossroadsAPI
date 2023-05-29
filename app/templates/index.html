@@ -1,19 +1,7 @@
 {% extends "base.html" %}
 
 {% block header %}
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <nav class="main-nav">
-                <!-- ***** Logo Start ***** -->
-                <a href="{{ url_for('index') }}" class="logo">
-                    <h1>Furry Crossroads</h1>
-                </a>
-                <!-- ***** Logo End ***** -->
-            </nav>
-        </div>
-    </div>
-</div>
+Furry Crossroads
 {% endblock %}
 
 {% block content %}
@@ -23,8 +11,8 @@
         <div class="col-lg-8">
           {% include 'login.html' %}
         </div>
-        <div class="col-lg-4">
-          <img src="{{ url_for('static', filename='images/rover_wip.png')}}" alt="banner-img" class="img-fluid" />
+        <div class="col-lg-4 justify-content-center">
+          <img src="{{ url_for('static', filename='images/rover_wip.png')}}" alt="Rover wear  ing a construction outfit and holding a wrench." class="img-fluid text-center" />
         </div>
       </div>
     </div>
