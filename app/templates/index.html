@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block header %}
+Furry Crossroads
+{% endblock %}
+
+{% block content %}
+  <div class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          {% include 'login.html' %}
+        </div>
+        <div class="col-lg-4 justify-content-center">
+          <img src="{{ url_for('static', filename='images/rover_wip.png')}}" alt="Rover wear  ing a construction outfit and holding a wrench." class="img-fluid text-center" />
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
