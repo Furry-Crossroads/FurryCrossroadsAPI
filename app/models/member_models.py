@@ -8,9 +8,9 @@ from sqlalchemy import (
     Table, Column, ForeignKey, CheckConstraint,
     Integer, Boolean, Text, DateTime, Float, String
 )
-import uuid
 from werkzeug.security import generate_password_hash, check_password_hash
 
+import uuid
 
 class Member(db.Model):
     __tablename__ = 'member'
