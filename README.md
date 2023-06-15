@@ -1,7 +1,8 @@
-<p align="center" style="position: relative; padding: 10px">
-  <img src="./app/static/wallpaper.png" alt="Furry Crossroads Wallpaper" width="500" style="position: absolute; z-index: -1; left: 50%; top: 50%; transform: translate(-50%, -50%);">
-  <img src="./app/static/button_logo.PNG" alt="Furry Crossroads Logo" width="200">
-</p>
+<div align="center" style="background: url('./app/static/wallpaper.png'); background-position: center 75%; padding: 25px">
+  <img src="./app/static/button_logo.PNG" alt="Furry Crossroads Logo" width="145" style="vertical-align: middle">
+  <h2 style="font-family: Cursive; font-size: 50px; color: #c8c2ff; display: inline-block; vertical-align: middle; margin-left: 10px;">Furry Crossroads</h2>
+</div>
+
 
 <p align="center"><i>A Community Driven on Putting our Members First</i></p>
 
