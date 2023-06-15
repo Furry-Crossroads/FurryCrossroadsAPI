@@ -35,6 +35,8 @@ def get_config_object(**kwargs) -> object:
         _Config.SQLALCHEMY_DATABASE_NAME)
     ):
         raise RuntimeError("One or more of the SQLAlchemy environment variables are not set.")
+
+    if _Config.SQLALCHEMY_DATABASE_TYPE != "postgresql": print("WARNING: FurryCrossroadsAPI was built assuming POSTGRES as DB TYPE. Other types may not be compatible with ORM configuration.")
     _Config.SQLALCHEMY_DATABASE_URI = f"{_Config.SQLALCHEMY_DATABASE_TYPE}://{_Config.SQLALCHEMY_USERNAME}:{_Config.SQLALCHEMY_PASSWORD}@{_Config.SQLALCHEMY_HOST}/{_Config.SQLALCHEMY_DATABASE_NAME}"
     _Config.SQLALCHEMY_TRACK_MODIFICATIONS = True
 
