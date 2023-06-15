@@ -1,6 +1,6 @@
 <p align="center" style="padding: 25px">
   <a href="https://github.com/Furry-Crossroads/FurryCrossroadsAPI">
-    <img src="./app/static/logo_header.PNG" alt="Furry Crossroads Logo" style="vertical-align: middle">
+    <img src="./app/static/logo_header.png" alt="Furry Crossroads Logo" style="vertical-align: middle">
   </a>
 </p>
 
