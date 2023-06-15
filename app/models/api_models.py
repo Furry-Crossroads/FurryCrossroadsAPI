@@ -7,7 +7,31 @@ from sqlalchemy import (
     Column, ForeignKey,
     Integer, SmallInteger,Boolean, Text, DateTime, Float, String
 )
-import uuid
+import secrets
+from datetime import datetime, timedelta
+
+def generate_and_store_token(member_registration, expiration_days=30):
+    # Generate a secure random token
+    text_token = secrets.token_hex(32)
+
+    # Determine the expiration date
+    expires_at = datetime.utcnow() + timedelta(days=expiration_days)
+
+    # Create a new ApiToken object
+    token_model = ApiToken(
+        token=text_token, 
+        member_registration=member_registration, 
+        expiration=expires_at,
+        generated_at=datetime.utcnow(),
+    )
+
+    # Add the new token to the session and commit it
+    db.session.add(token_model)
+    db.session.commit()
+
+    # Return the new token
+    return text_token
+
 
 
 class ApiToken(db.Model):

@@ -14,28 +14,6 @@ import secrets
 basic_auth = HTTPBasicAuth()
 token_auth = HTTPTokenAuth('Bearer')
 
-def generate_and_store_token(member_registration, expiration_days=30):
-    # Generate a secure random token
-    text_token = secrets.token_hex(32)
-
-    # Determine the expiration date
-    expires_at = datetime.utcnow() + timedelta(days=expiration_days)
-
-    # Create a new ApiToken object
-    token_model = ApiToken(
-        token=text_token, 
-        member_registration=member_registration, 
-        expiration=expires_at,
-        generated_at=datetime.utcnow(),
-    )
-
-    # Add the new token to the session and commit it
-    db.session.add(token_model)
-    db.session.commit()
-
-    # Return the new token
-    return text_token
-
 # Verify username and password
 @basic_auth.verify_password
 def verify_password(username, password):
