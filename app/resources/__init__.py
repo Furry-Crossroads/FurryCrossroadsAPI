@@ -7,7 +7,11 @@ from .api_token_gen import (
     TokenGen,
 )
 
-__all__ = ['TokenGen']
+from .member_methods import (
+    MemberMethods,
+)
+
+__all__ = ['TokenGen', 'MemberMethods']
 
 
 print("Resources loaded successfully.")

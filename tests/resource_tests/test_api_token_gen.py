@@ -1,5 +1,8 @@
 from base64 import b64encode
 
+"""This should mostly act like an external script making requests to the API to test it.
+"""
+
 def test_token_gen_post(test_client, test_member, test_mod, test_admin):
     """Try to generate a token for each member
     """

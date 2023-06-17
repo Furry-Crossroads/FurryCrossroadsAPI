@@ -39,3 +39,26 @@ class Member(db.Model):
 
     def check_password(self, password):
         return check_password_hash(self.pass_hash, password)
+    
+    def as_dict(self, excluded=[], *args):
+        excluded_columns = {"pass_hash", *excluded, *args}
+        return {c.name: getattr(self, c.name) for c in self.__table__.columns if not(c.name in excluded_columns)}
+    
+
+class DiscordMember(db.Model):
+    __tablename__ = 'discord_members'
+    discord_id          = Column(String(64), primary_key=True, nullable=False)
+    member_registration = Column(UUID(as_uuid=True), ForeignKey('member.registration'), nullable=False)
+    boops               = Column(SMALLINT, nullable=False, default=0)
+    fortune_attempts    = Column(SMALLINT, nullable=False, default=0)
+    message_count       = Column(SMALLINT, nullable=False, default=0)
+
+class TelegramMember(db.Model):
+    __tablename__ = 'telegram_members'
+    discord_id          = Column(String(64), primary_key=True, nullable=False)
+    member_registration = Column(UUID(as_uuid=True), ForeignKey('member.registration'), nullable=False)
+
+class MinecraftMember(db.Model):
+    __tablename__ = 'minecraft_members'
+    discord_id          = Column(String(64), primary_key=True, nullable=False)
+    member_registration = Column(UUID(as_uuid=True), ForeignKey('member.registration'), nullable=False)

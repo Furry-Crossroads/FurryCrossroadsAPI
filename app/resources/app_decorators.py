@@ -19,14 +19,18 @@ token_auth = HTTPTokenAuth('Bearer')
 def verify_password(username, password):
     member = Member.query.filter_by(username=username).first()
     if member and member.check_password(password):
+        g.current_user = member
         return member
+    return False
 
 # Verify token
 @token_auth.verify_token
 def verify_token(token):
     api_token = ApiToken.query.filter_by(token=token, active=True).first()
     if api_token and api_token.expiration > datetime.utcnow():
+        g.current_user = Member.query.filter_by(registration=api_token.member_registration)
         return api_token
+    return False
 
 @app.before_request
 def start_timer():

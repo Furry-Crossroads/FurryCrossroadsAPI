@@ -19,6 +19,7 @@ from . import resources
 from . import views
 __all__ = ['app', 'api', 'db', 'resources', 'views', 'models']
 api.add_resource(resources.TokenGen, '/token')
+api.add_resource(resources.MemberMethods, '/member')
 with app.app_context():
     db.create_all()
 
